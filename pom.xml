@@ -17,6 +17,8 @@
         <module>service-feign</module>
         <module>service-feign-hystrix</module>
         <module>service-zuul</module>
+        <module>service-miya</module>
+        <module>server-zipkin</module>
     </modules>
 
     <parent>
