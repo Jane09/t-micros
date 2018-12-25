@@ -11,3 +11,7 @@ spring:
           password:
           uri: https://github.com/Jane09/config-repos
           search-paths: tmicros
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
