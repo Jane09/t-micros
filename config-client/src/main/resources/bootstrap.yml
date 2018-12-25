@@ -6,6 +6,12 @@ spring:
       label: master
       profile: dev
       uri: http://localhost:8888/
+      discovery:
+        enabled: true
+        service-id: CONFIG-SERVER
+  rabbitmq:
+    host: localhost
+    port: 5672
 server:
   port: 8881
 eureka:
