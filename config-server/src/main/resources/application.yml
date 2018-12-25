@@ -1,0 +1,13 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          username:
+          password:
+          uri: https://github.com/Jane09/config-repos
+          search-paths: tmicros
