@@ -1,0 +1,17 @@
+server:
+  port: 8502
+spring:
+  application:
+    name: consul-miya
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        health-check-path: ${management.contextPath}/health
+        healthCheckInterval: 15s
+        instance-id: consul-miya
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/

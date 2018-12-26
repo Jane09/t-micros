@@ -23,6 +23,8 @@
         <module>eureka-server-node1</module>
         <module>service-lucky</module>
         <module>service-turbine</module>
+        <module>consul-miya</module>
+        <module>server-zipkin-mysql</module>
     </modules>
 
     <parent>
@@ -38,6 +40,7 @@
         <java.version>1.8</java.version>
         <spring.cloud.version>Finchley.SR2</spring.cloud.version>
         <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
+        <zipkin.server.version>2.11.12</zipkin.server.version>
     </properties>
 
     <dependencyManagement>
@@ -49,6 +52,32 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-server</artifactId>
+                <version>${zipkin.server.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-autoconfigure-storage-mysql</artifactId>
+                <version>${zipkin.server.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-storage-mysql</artifactId>
+                <version>2.8.4</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-autoconfigure-ui</artifactId>
+                <version>${zipkin.server.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.47</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
