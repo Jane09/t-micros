@@ -21,6 +21,8 @@
         <module>server-zipkin</module>
         <module>eureka-server-cluster</module>
         <module>eureka-server-node1</module>
+        <module>service-lucky</module>
+        <module>service-turbine</module>
     </modules>
 
     <parent>
