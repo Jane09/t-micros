@@ -19,6 +19,8 @@
         <module>service-zuul</module>
         <module>service-miya</module>
         <module>server-zipkin</module>
+        <module>eureka-server-cluster</module>
+        <module>eureka-server-node1</module>
     </modules>
 
     <parent>

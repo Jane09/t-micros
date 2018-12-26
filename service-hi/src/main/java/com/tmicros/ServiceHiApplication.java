@@ -1,5 +1,6 @@
 package com.tmicros;
 
+import brave.sampler.Sampler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,18 +27,17 @@ import java.util.logging.Logger;
 @Slf4j
 public class ServiceHiApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ServiceHiApplication.class, args);
-    }
-
     private static final Logger LOG = Logger.getLogger(ServiceHiApplication.class.getName());
 
     @Value("${server.port}")
     String port;
 
-
     @Autowired
     private RestTemplate restTemplate;
+
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceHiApplication.class, args);
+    }
 
     @Bean
     public RestTemplate getRestTemplate(){
@@ -57,7 +57,8 @@ public class ServiceHiApplication {
     }
 
     @Bean
-    public ProbabilityBasedSampler defaultSampler(){
-        return new ProbabilityBasedSampler(new SamplerProperties());
+    public Sampler defaultSampler(){
+        return ProbabilityBasedSampler.ALWAYS_SAMPLE;
     }
+
 }
