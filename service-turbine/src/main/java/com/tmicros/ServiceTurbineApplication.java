@@ -17,7 +17,7 @@ import java.util.Map;
 public class ServiceTurbineApplication {
     public static void main(String[] args) {
         Map<String,Object> properties = new HashMap<>(1);
-        properties.put("turbine.instanceUrlSuffix","hystrix.stream");
+        properties.put("turbine.instanceUrlSuffix","hystrix");
         new SpringApplicationBuilder(ServiceTurbineApplication.class).web(WebApplicationType.SERVLET).properties(properties).run(args);
     }
 }
